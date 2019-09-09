@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './comp/Header.js';
 import Describe from './comp/Describe.js';
+import Images from './comp/Images.js';
 
 class App extends React.Component {
 
@@ -15,11 +16,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='header' className='container'>
+      <div id='header' className='container-fluid'>
         <Header score={this.state.score} />
         <hr />
         <Describe />
         <hr />
+        <Images />
       </div> // container ends
     )
   }

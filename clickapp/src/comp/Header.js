@@ -6,7 +6,7 @@ export class Header extends Component {
             <div className='row'>
 
                 <div className='col-md-6'>
-                    <h1 className='text-left pl-2'>Click Game!</h1>
+                    <h1 className='text-center pl-2'>Click Game!</h1>
                 </div>
 
                 <div className='col-md-6'>
