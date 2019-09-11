@@ -1,21 +1,18 @@
 import React, { Component } from 'react'
+import ImagesUrl from '../ImagesUrl.json'
 
-export class Images extends Component {
+class Images extends Component {
+
+    renderImages = () => {
+        return ImagesUrl.map( ({url, id}) => <img key={id} src={url} alt="Icon" /> )
+    }
+
     render() {
+        console.log(ImagesUrl[0].url)
         return (
-            <div className='row'>
-                <div className='col-md-3'>
-                    <img className='center-block' src='./picOne.png' />
-                </div>
-                <div className='col-md-3'>
-                    <img className='center-block' src='./picTwo.jpg' />
-                </div>
-                <div className='col-md-3'>
-                    
-                </div>
-                <div className='col-md-3'>
-                
-                </div>
+            <div className='images'>
+                {this.renderImages()}
+                <img alt="some" src="./picOne.png" />
             </div>
         )
     }
