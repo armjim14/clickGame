@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "url": "../Images/picOne.png"
+        "url": "./Images/picOne.png"
     },
     {
         "id": 2,
-        "url": "../picTwo.jpg"
+        "url": "./Images/picTwo.jpg"
     },
     {
         "id": 3,
-        "url": "./picThree.png"
+        "url": "./Images/picThree.png"
     }
 ]

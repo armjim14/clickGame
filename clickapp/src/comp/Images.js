@@ -4,15 +4,15 @@ import ImagesUrl from '../ImagesUrl.json'
 class Images extends Component {
 
     renderImages = () => {
+        var random = [];
         return ImagesUrl.map( ({url, id}) => <img key={id} src={url} alt="Icon" /> )
     }
 
     render() {
-        console.log(ImagesUrl[0].url)
+        console.log(typeof ImagesUrl[0].url)
         return (
             <div className='images'>
                 {this.renderImages()}
-                <img alt="some" src="./picOne.png" />
             </div>
         )
     }
