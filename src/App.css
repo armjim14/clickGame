@@ -42,7 +42,7 @@ hr {
   width: 100%;
   height: fit-content;
   padding-bottom: 12px;
-  margin-top: 95px;
+  margin-top: 60px;
 }
 #desc {
   margin-top: 10px;
@@ -86,9 +86,9 @@ img:hover {
   }
 }
 
-@media screen and (max-width: 578px){
+@media screen and (max-width: 579px){
   #header-left, #header-right { width: 100%; }
-  #section { margin-top: 62px;}
+  #section { margin-top: 95px;}
 }
 
 @media screen and (max-width: 520px){
