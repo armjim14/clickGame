@@ -10,5 +10,41 @@
     {
         "id": 3,
         "url": "./Images/picThree.png"
+    },
+    {
+        "id": 4,
+        "url": "./Images/picFour.png"
+    },
+    {
+        "id": 5,
+        "url": "./Images/picFive.png"
+    },
+    {
+        "id": 6,
+        "url": "./Images/picSix.png"
+    },
+    {
+        "id": 7,
+        "url": "./Images/picSeven.png"
+    },
+    {
+        "id": 8,
+        "url": "./Images/picEight.png"
+    },
+    {
+        "id": 9,
+        "url": "./Images/picNine.png"
+    },
+    {
+        "id": 10,
+        "url": "./Images/picTen.png"
+    },
+    {
+        "id": 11,
+        "url": "./Images/picEl.png"
+    },
+    {
+        "id": 12,
+        "url": "./Images/fin.png"
     }
 ]

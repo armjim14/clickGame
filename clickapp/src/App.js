@@ -10,18 +10,31 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      score: 0
+      score: 0,
+      topScore: 0
+    }
+  }
+
+  updateState = run => {
+    console.log(run);
+    if (run){
+      console.log("top part")
+      var temp = this.state.score + 1;
+      this.setState({score: temp})
+    } else {
+      console.log("bottom part")
+      this.setState({score: 0})
     }
   }
 
   render() {
     return (
       <div id='header' className='container-fluid'>
-        <Header score={this.state.score} />
+        <Header score={this.state.score} topScore={this.state.topScore} />
         <hr />
         <Describe />
         <hr />
-        <Images />
+        <Images handleRes={this.updateState} />
       </div> // container ends
     )
   }

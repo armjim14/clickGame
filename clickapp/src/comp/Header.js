@@ -10,7 +10,7 @@ export class Header extends Component {
                 </div>
 
                 <div className='col-md-6'>
-                    <h2 className='text-center'>Score: {this.props.score} | High Score: </h2>
+                    <h2 className='text-center'>Score: {this.props.score} | High Score: {this.props.topScore} </h2>
                 </div>
 
             </div>

@@ -3,13 +3,51 @@ import ImagesUrl from '../ImagesUrl.json'
 
 class Images extends Component {
 
+    state = {
+        list: [],
+        correctGuess: []
+    }
+
+    shuffle = a => {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    newCards = (id) => {
+        var newarr = this.shuffle(ImagesUrl)
+        let run = true;
+        let arr = this.state.correctGuess;
+        for (let v in this.state.correctGuess){
+            if (this.state.correctGuess[v] === id){
+                run = false
+            }
+        }
+        console.log(arr.length)
+        console.log(run)
+        console.log(this.state.correctGuess)
+        this.setState({list: newarr})
+
+        if (run){
+            arr.push(id);
+            this.setState({correctGuess: arr})
+            this.props.handleRes(true)
+        } else {
+            this.props.handleRes(false)
+        }
+    }
+
     renderImages = () => {
-        var random = [];
-        return ImagesUrl.map( ({url, id}) => <img key={id} src={url} alt="Icon" /> )
+        return this.state.list.map( ({id, url}) => <img key={id} onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /> )
+    }
+
+    componentDidMount() {
+        this.newCards()
     }
 
     render() {
-        console.log(typeof ImagesUrl[0].url)
         return (
             <div className='images'>
                 {this.renderImages()}
