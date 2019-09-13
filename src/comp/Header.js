@@ -3,16 +3,13 @@ import React, { Component } from 'react'
 export class Header extends Component {
     render() {
         return (
-            <div className='row'>
-
-                <div className='col-md-6'>
-                    <h1 className='text-center pl-2'>Click Game!</h1>
+            <div id="header">
+                <div id="header-left">
+                    <h2>Memorize</h2>
                 </div>
-
-                <div className='col-md-6'>
-                    <h2 className='text-center'>Score: {this.props.score} | High Score: {this.props.topScore} </h2>
+                <div id="header-right">
+                    <h2>Score: {this.props.score} | High Score: {this.props.topScore} </h2>
                 </div>
-
             </div>
         )
     }

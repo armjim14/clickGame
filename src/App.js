@@ -35,11 +35,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='header' className='container-fluid'>
+      <div className="app">
         <Header score={this.state.score} topScore={this.state.topScore} />
-        <hr />
         <Describe />
-        <hr />
         <Images handleRes={this.updateState} />
       </div> // container ends
     )

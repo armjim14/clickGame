@@ -1,18 +1,66 @@
-body, html {
+/* quick reset */
+body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100vh;
   background-color: rgb(186, 245, 250);
+  text-align: center;
+}
+.app {
+  width: 100%;
 }
 
+/* for header containing the score */
+#header {
+  width: 100%;
+  height: fit-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: fixed;
+  background-color: black;
+  top: 0;
+  color: white;
+  border-bottom: darkcyan solid 1px;
+}
+#header-left, #header-right {
+  width: 50%;
+  float: left;
+}
+h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+
+/* for hr */
+hr {
+  border: black solid .33px;
+  width: 80%;
+}
+
+/* for section containing describtion */
+#section {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 12px;
+  margin-top: 95px;
+}
 #desc {
-  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 22px;
+  text-align: center;
 }
 
+/* for images */
+.images {
+  width: 960px;
+  margin: auto;
+  height: fit-content;
+}
 .forImg {
   float: left;
-  margin-left: 12px;
+  justify-content: center;
+  display: contents;
 }
 
 img {
@@ -21,7 +69,6 @@ img {
   border: black solid 1px;
   margin: 10px;
 }
-
 img:hover {
   border: lightcoral solid 1px;
   box-shadow: 1px 1px
@@ -33,15 +80,14 @@ img:hover {
   margin-right: auto;
 }
 
-.images {
-  width: 960px;
-  margin: auto;
-}
-
 @media screen and (max-width: 965px){
   .images {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 578px){
+  #header-left, #header-right { width: 100%; }
 }
 
 @media screen and (max-width: 520px){
@@ -50,14 +96,32 @@ img:hover {
   }
 }
 
-@media screen and (max-width: 490px){
+@media screen and (max-width: 461px){
   img {
-    width: 140px; height: 140px;
+    width: 170px; height: 170px;
   }
 }
 
-@media screen and (max-width: 367px){
+@media screen and (max-width: 401px){
   img {
-    width: 120px; height: 120px;
+    width: 160px; height: 160px;
+  }
+}
+
+@media screen and (max-width: 380px){
+  img {
+    width: 155px; height: 155px;
+  }
+}
+
+@media screen and (max-width: 371px){
+  img {
+    width: 149px; height: 149px;
+  }
+}
+
+@media screen and (max-width: 359px){
+  img {
+    width: 129px; height: 129px;
   }
 }
