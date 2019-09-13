@@ -36,6 +36,7 @@ class Images extends Component {
             this.props.handleRes(true)
         } else {
             this.props.handleRes(false)
+            this.setState({correctGuess: []})
         }
     }
 
