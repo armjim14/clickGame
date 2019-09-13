@@ -12,6 +12,7 @@
 ![website look](mobileLook.PNG)
 
 ### The goal for this game is to select all the images without selecting the same image twice.
+### Every time you select a image the images will shuffle.
 
 #### The score updated when you have not selected a duplicate image and if you do the high score keeps track of the highest score during that session.
 
