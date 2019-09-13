@@ -16,8 +16,10 @@ class App extends React.Component {
   }
 
   updateTop = () => {
-    if (this.state.score > this.state.topScore){
-      this.setState({topScore: this.state.score})
+    console.log(this.state.score);
+    console.log(this.state.topScore)
+    if (this.state.score >= this.state.topScore){
+      this.setState({topScore: this.state.score + 1})
     }
   }
 
