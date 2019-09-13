@@ -25,9 +25,6 @@ class Images extends Component {
                 run = false
             }
         }
-        console.log(arr.length)
-        console.log(run)
-        console.log(this.state.correctGuess)
         this.setState({list: newarr})
 
         if (run){
@@ -41,7 +38,7 @@ class Images extends Component {
     }
 
     renderImages = () => {
-        return this.state.list.map( ({id, url}) => <div className="forImg"><img key={id} onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /></div> )
+        return this.state.list.map( ({id, url}) => <div key={id} className="forImg"><img onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /></div> )
     }
 
     componentDidMount() {

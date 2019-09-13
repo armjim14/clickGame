@@ -11,13 +11,12 @@ class App extends React.Component {
 
     this.state = {
       score: -1,
-      topScore: 0
+      topScore: 0,
+      color: "white"
     }
   }
 
   updateTop = () => {
-    console.log(this.state.score);
-    console.log(this.state.topScore)
     if (this.state.score >= this.state.topScore){
       this.setState({topScore: this.state.score + 1})
     }
@@ -26,17 +25,21 @@ class App extends React.Component {
   updateState = run => {
     if (run){
       var temp = this.state.score + 1;
-      this.setState({score: temp})
+      if (this.state.score == -1){
+        this.setState({score: temp})
+      } else {
+        this.setState({score: temp, color: "#007bff"})
+      }
       this.updateTop()
     } else {
-      this.setState({score: 0})
+      this.setState({score: 0, color: "red"})
     }
   }
 
   render() {
     return (
       <div className="app">
-        <Header score={this.state.score} topScore={this.state.topScore} />
+        <Header upStyle={this.state.color} score={this.state.score} topScore={this.state.topScore} />
         <Describe />
         <Images handleRes={this.updateState} />
       </div> // container ends
