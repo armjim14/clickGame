@@ -88,6 +88,7 @@ img:hover {
 
 @media screen and (max-width: 578px){
   #header-left, #header-right { width: 100%; }
+  #section { margin-top: 62px;}
 }
 
 @media screen and (max-width: 520px){
