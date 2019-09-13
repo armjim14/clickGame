@@ -41,7 +41,7 @@ class Images extends Component {
     }
 
     renderImages = () => {
-        return this.state.list.map( ({id, url}) => <img key={id} onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /> )
+        return this.state.list.map( ({id, url}) => <div className="forImg"><img key={id} onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /></div> )
     }
 
     componentDidMount() {
