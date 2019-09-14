@@ -28,11 +28,19 @@ class App extends React.Component {
       if (this.state.score == -1){
         this.setState({score: temp})
       } else {
-        this.setState({score: temp, color: "rgb(0, 123, 255)"})
+        this.setState({score: temp, color: "rgb(0, 123, 255)"}, () => {
+          setTimeout(() => {
+            this.setState({color: "white"})
+          }, 600)
+        })
       }
       this.updateTop()
     } else {
-      this.setState({score: 0, color: "red"})
+      this.setState({score: 0, color: "red"}, () => {
+        setTimeout(() => {
+          this.setState({color: "white"})
+        }, 600)
+      })
     }
   }
 

@@ -5,8 +5,9 @@ export class Describe extends Component {
         return (
             <div id="section">
                 <p id='desc'>
-                    Click on every image once to win!. 
-                    If you choose on the same image twice the score will reset but the High score will stay the same.
+                    Click on a image to score a point, 
+                    but if you click on the same image twice the score will reset
+                    while the High score keeps track of your highest score.
                 </p>
             </div>
         )
