@@ -10,37 +10,39 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      score: -1,
+      score: 0,
       topScore: 0,
       color: "white"
     }
   }
 
   updateTop = () => {
-    if (this.state.score >= this.state.topScore){
-      this.setState({topScore: this.state.score + 1})
+    if (this.state.score >= this.state.topScore) {
+      this.setState({ topScore: this.state.score + 1 })
     }
   }
 
   updateState = run => {
-    if (run){
+    if (run) {
+
       var temp = this.state.score + 1;
-      if (this.state.score == -1){
-        this.setState({score: temp})
-      } else {
-        this.setState({score: temp, color: "rgb(0, 123, 255)"}, () => {
-          setTimeout(() => {
-            this.setState({color: "white"})
-          }, 600)
-        })
-      }
-      this.updateTop()
-    } else {
-      this.setState({score: 0, color: "red"}, () => {
+
+      this.setState({ score: temp, color: "rgb(0, 123, 255)" }, () => {
         setTimeout(() => {
-          this.setState({color: "white"})
-        }, 600)
+          this.setState({ color: "white" })
+        }, 400)
       })
+
+      this.updateTop()
+
+    } else {
+
+      this.setState({ score: 0, color: "red" }, () => {
+        setTimeout(() => {
+          this.setState({ color: "white" })
+        }, 400)
+      })
+
     }
   }
 
@@ -50,7 +52,7 @@ class App extends React.Component {
         <Header upStyle={this.state.color} score={this.state.score} topScore={this.state.topScore} />
         <Describe />
         <Images handleRes={this.updateState} />
-      </div> // container ends
+      </div>
     )
   }
 

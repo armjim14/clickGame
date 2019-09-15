@@ -8,29 +8,27 @@ class Images extends Component {
         correctGuess: []
     }
 
-    shuffle = a => {
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
-    }
-
     newCards = (id) => {
-        var newarr = this.shuffle(ImagesUrl)
+        let shuffle = ImagesUrl.sort( () => .5 - Math.random() )
         let run = true;
         let arr = this.state.correctGuess;
+        
         for (let v in this.state.correctGuess){
             if (this.state.correctGuess[v] === id){
                 run = false
             }
         }
-        this.setState({list: newarr})
+
+        this.setState({list: shuffle})
 
         if (run){
-            arr.push(id);
-            this.setState({correctGuess: arr})
-            this.props.handleRes(true)
+            if (!id){
+                console.log("Welcome to the game")
+            } else {
+                arr.push(id);
+                this.setState({correctGuess: arr})
+                this.props.handleRes(true)
+            }   
         } else {
             this.props.handleRes(false)
             this.setState({correctGuess: []})
@@ -38,7 +36,16 @@ class Images extends Component {
     }
 
     renderImages = () => {
-        return this.state.list.map( ({id, url}) => <div key={id} className="forImg"><img onClick={ this.newCards.bind(this, id) } src={url} alt="Some Icon" /></div> )
+        return this.state.list
+            .map( ({id, url}) => 
+                <div 
+                    key={id} 
+                    className="forImg">
+
+                    <img 
+                        onClick={ this.newCards.bind(this, id) } 
+                        src={url} alt="Some Icon" />
+                </div> )
     }
 
     componentDidMount() {
